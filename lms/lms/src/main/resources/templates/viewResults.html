@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>All Results</title>
+</head>
+<body>
+<h1>All Students' Results</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Student ID</th>
+        <th>Question ID</th>
+        <th>Selected Option</th>
+        <th>Correct</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${results}">
+        <td th:text="${result.studentId}"></td>
+        <td th:text="${result.questionId}"></td>
+        <td th:text="${result.selectedOption}"></td>
+        <td th:text="${result.correct ? 'Yes' : 'No'}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

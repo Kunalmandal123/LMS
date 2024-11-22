@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Result</title>
+</head>
+<body>
+<h1>Your Test Result</h1>
+<p><strong>Score:</strong> <span th:text="${score}"></span> / <span th:text="${totalQuestions}"></span></p>
+<p><strong>Percentage:</strong> <span th:text="${percentage}"></span>%</p>
+
+<h2>Question-wise Details</h2>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Question ID</th>
+        <th>Selected Option</th>
+        <th>Correct</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="result : ${studentResults}">
+        <td th:text="${result.questionId}"></td>
+        <td th:text="${result.selectedOption}"></td>
+        <td th:text="${result.correct ? 'Yes' : 'No'}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
